@@ -1,27 +1,38 @@
-# AngularEslintPrettier
+# Install
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+## Installing ESLint:
 
-## Development server
+```npm i -D typescript eslint eslint-config-typescript```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Configuring ESLint for TypeScript:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```eslint --init```
 
-## Build
+ - check syntax and find problems
+ - type of JavaScript module structures - none of these
+ - single page application framework - none of these
+ - TypeScript - yes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## npm script:
 
-## Running unit tests
+```
+"lint": "eslint --ext .ts .",
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installing and Configuring Prettier:
 
-## Running end-to-end tests
+```npm i -D prettier eslint-plugin-prettier eslint-config-prettier```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## eslintrc.json > extends section > add the following two entries:
 
-## Further help
+```
+"prettier/@typescript-eslint",
+"plugin:prettier/recommended"
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## update npm script:
+
+```
+"lint": "eslint --fix --ext .ts .",
+```
